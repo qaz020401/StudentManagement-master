@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+    <link rel="stylesheet" href="../static/css/delInformation.css">
+</head>
+<body>
+<form action="/edit/" method="POST">
+    {% csrf_token %}
+    <h1>修改学生</h1>
+    <input type="text" name="stu_id" placeholder="请输入要修改学生的学号">
+    <input type="submit" value="确定">
+    <div class="color"> {{ msg }} </div>
+    <div class="mylenth">
+        <a href="http://127.0.0.1:8000/index/" class="color">点击返回主页</a>
+    </div>
+</form>
+</body>
+</html>

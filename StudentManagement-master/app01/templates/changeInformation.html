@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+     <link rel="stylesheet" href="{% static 'css/addInformation.css' %}">
+</head>
+<body>
+    <form action="/edit_submit/" method="POST">
+        {% csrf_token %}
+        {% for data_list in value %}
+        <input type="text" name="name" placeholder="请输入学生姓名" value="{{ data_list.name }}">
+        <input type="text" name="stu_id" placeholder="请输入学生学号" value="{{ data_list.stu_id }}">
+        <input type="text" name="class_id" placeholder="请输入学生班级" value="{{ data_list.class_id }}">
+        <input type="text" name="chinese" placeholder="语文成绩" value="{{ data_list.chinese }}">
+        <input type="text" name="math" placeholder="数学成绩" value="{{ data_list.math }}">
+        <input type="text" name="english" placeholder="英语成绩" value="{{ data_list.english }}">
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+        {% endfor %}
+    </form>
+</body>
+</html>

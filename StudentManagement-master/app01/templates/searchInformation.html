@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找学生</title>
+    <link rel="stylesheet" href="{% static 'css/findStudent.css' %}">
+</head>
+
+<body>
+<form method="post" action="/search/">
+    {% csrf_token %}
+    <div class="search-container">
+        <a href="http://127.0.0.1:8000/index/" class="back-link">返回主页面</a>
+        <h1>查找学生</h1>
+        <input type="text" name="stu_id" placeholder="请输入要查找学生的学号" value="{{ stu_id }}">
+        <input type="submit" value="查找">
+        <div class="color">{{ msg }}</div>
+    </div>
+</form>
+
+{% if data_list %}
+    <table>
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>班级</th>
+            <th>学号</th>
+            <th>语文成绩</th>
+            <th>数学成绩</th>
+            <th>英语成绩</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for value in data_list %}
+            <tr>
+                <td>{{ value.name }}</td>
+                <td>{{ value.class_id }}</td>
+                <td>{{ value.stu_id }}</td>
+                <td>{{ value.chinese }}</td>
+                <td>{{ value.math }}</td>
+                <td>{{ value.english }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+</body>
+</html>

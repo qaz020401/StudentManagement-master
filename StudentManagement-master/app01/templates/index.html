@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学生成绩管理系统</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+<header>
+    <h1>学生成绩管理系统</h1>
+</header>
+
+<main>
+    <div class="content-box">
+        <ul class="menu">
+            <li>
+                <div class="color-block color-block-blue"></div>
+                <a href="http://127.0.0.1:8000/student/" target="_self">查看学生</a>
+            </li>
+             <li>
+                <div class="color-block color-block-green"></div>
+                <a href="http://127.0.0.1:8000/search/" target="_self">查找学生</a>
+            </li>
+            <li>
+                <div class="color-block color-block-red"></div>
+                <a href="http://127.0.0.1:8000/add/" target="_self">添加学生</a>
+            </li>
+            <li>
+                <div class="color-block color-block-green"></div>
+                <a href="http://127.0.0.1:8000/edit/" target="_self">修改学生信息</a>
+            </li>
+            <li>
+                <div class="color-block color-block-yellow"></div>
+                <a href="http://127.0.0.1:8000/del/" target="_self">删除学生</a>
+            </li>
+        </ul>
+    </div>
+</main>
+
+</body>
+</html>
